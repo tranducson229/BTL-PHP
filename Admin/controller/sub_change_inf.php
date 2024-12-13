@@ -3,8 +3,8 @@ include "../model/control_user.php";
 session_start();
 if(isset($_POST['txtsub'])){
         $data = new data_user();
-        move_uploaded_file($_FILES['txtavatar']['tmp_name'],'../upload/'.$_FILES['txtavatar']['name']);
-        $update=$data->update_profile($_SESSION['username'],$_POST['txtmail'],$_POST['txtgender'],  $_POST['txtaddress'],  $_POST['txtemail']);
+        // move_uploaded_file($_FILES['txtavatar']['tmp_name'],'../upload/'.$_FILES['txtavatar']['name']);
+        $update=$data->update_profile($_SESSION['username'],$_POST['txtmail'],  $_POST['txtaddress'], $_POST['txtgender']);
         if($update){
             echo "<script>alert('Đã cập nhật thông tin');
              window.location.href = '../Guest/profile.php';

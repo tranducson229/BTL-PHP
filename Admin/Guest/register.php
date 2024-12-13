@@ -20,6 +20,7 @@
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
@@ -53,11 +54,11 @@
       <div  style="width: 400px; margin-top: 100px; margin-bottom: 100px;" class="border p-3 mx-auto">
         <h4 class="text-center">Sign Up</h4>
         <div class="mt-4 mb-4 form-floating">
-          <input type="text" class="form-control" name="txtname" placeholder="UserName" id="txtname">
+          <input type="text" class="form-control" name="txtname" placeholder="UserName" id="username">
           <label for="txtname" >UserName</label>
         </div>
         <div class="mt-4 mb-4 form-floating">
-          <input type="text" class="form-control" name="txtmail" placeholder="Email" id="txtmail">
+          <input type="text" class="form-control" name="txtmail" placeholder="Email" id="email">
           <label for="txtmail" >Email</label>
         </div>
         <div  class="mt-4 mb-4 form-floating">      

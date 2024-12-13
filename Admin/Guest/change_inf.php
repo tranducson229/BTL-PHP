@@ -24,7 +24,8 @@
   <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
 
   <link href="css/style.css" rel="stylesheet" />
- 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
   <link href="css/responsive.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -55,7 +56,7 @@
                 <div class="col-7 lh-lg" >
                     <h4>THÔNG TIN CÁ NHÂN</h4>
                         EMAIL:
-                        <input type="text" class="form-control mb-3" name="txtmail" value="<?php echo$infor['txtmail'];?>"> 
+                        <input type="text" class="form-control mb-3" name="txtmail" value="<?php echo$infor['email'];?>"> 
                         ADDRESS:
                         <input type="textarea" class="form-control mb-3" name="txtaddress" value="<?php echo$infor['address'];?>"> 
                       
@@ -65,8 +66,7 @@
                             <option value="Female" <?php if ($infor['gender'] == 'Female') echo 'selected'; ?>>Female</option>
                             <option value="Other" <?php if ($infor['gender'] == 'Other') echo 'selected'; ?>>Other</option>
                         </select>
-                        HOBBY:
-                        <textarea name="txthobby" class="form-control"> <?php echo$infor['hobby'];?></textarea>
+                       
                 </div>
                 <div class="row d-flex justify-content-center mt-5">
                 <button name="txtsub"  type="submit" style="width: 100px;" class="btn btn-dark">Cập Nhật</button>

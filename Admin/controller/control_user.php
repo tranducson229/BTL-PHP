@@ -3,7 +3,7 @@
       include("../model/control_contact.php");
       $get_data=new data();
       $insert=$get_data->insert_table($_POST['Ten'],$_POST['Email'],$_POST['Phone'],$_POST['Messages']);  
-      if($insert) echo "<script>alert('SEIKOU')
+      if($insert) echo "<script>alert('Thành công')
                  window.location='../Guest/contact.php'</script>";
       else echo "<script>alert('MAKE')</script>";
     }
@@ -15,10 +15,11 @@
       if($login==1)
       {
         $_SESSION ['username']= $_POST['username'];
-        echo "<script>alert('SEIKOU')
+        echo "<script>alert('Đăng nhập thành công')
         window.location='../Guest/login.php'</script>";
       }
-      else echo "<script>alert('MAKE')</script>";
+      else echo "<script>alert('Đăng nhập không thành công')
+       window.location='../Guest/login.php'</script>";
     }
     if(isset($_POST['submit'])){
       session_start();
@@ -27,11 +28,11 @@
       $login =$get_data ->admin_log($_POST['username'], $_POST['password']);
       if($login==1){
         $_SESSION ['username']= $_POST['username'];
-        echo "<script>alert('SEIKOU')
+        echo "<script>alert('Đăng nhập thành công')
         window.location='../advance-admin/index copy.php'</script>";
       }
-      else echo "<script>alert('SEIKOU')
-      window.location='../Guest/index.php'</script>";
+      else echo "<script>alert('Đăng nhập không thành công')
+      window.location='../advance-admin/index copy.php'</script>";
       // else echo "<script>alert('MAKE')</script>";
     }
   ?>

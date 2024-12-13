@@ -2,12 +2,12 @@
 include ("connect.php");
 class data_user
 {
-    public function login ($username, $password)
-    {
+    public function login($username, $password) {
         global $conn;
-        $select = "select * from user where username= '$username' and password = '$password'";
-        $run = mysqli_query( $conn, $select);
-       return $run;
+        $select = "SELECT * FROM user WHERE username= '$username' AND password = '$password'";
+        $run = mysqli_query($conn, $select);
+        $count = mysqli_num_rows($run); // Đếm số dòng trả về
+        return $count; // Trả về số lượng dòng
     }
     public function select(){
         global $conn;
@@ -18,7 +18,7 @@ class data_user
    
     public function sl_username($name){
         global $conn;
-        $sql = "SELECT*FROM admin where username = '$name'";
+        $sql = "SELECT*FROM user where username = '$name'";
         $run = mysqli_query($conn, $sql);
         return $run;
     }
@@ -36,10 +36,10 @@ class data_user
         $run = mysqli_query($conn, $sql);
         return $run;
     }
-    public function update_profile($username, $address, $gender, $hobby, $email ){
+    public function update_profile($username, $email, $address, $gender){
         global $conn;
         $sql = "UPDATE user
-                SET address = '$address', gender = '$gender', hobby = '$hobby', email = '$email' 
+                SET email = '$email', address = '$address',  gender = '$gender' 
                 WHERE username = '$username'";
         $run = mysqli_query($conn, $sql);
         return $run;

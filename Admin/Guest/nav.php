@@ -1,3 +1,8 @@
+<?php
+      session_start();
+?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
 <section class="nav_section">
     <div class="container">
       <div class="custom_nav2">
@@ -5,7 +10,6 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex  flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
@@ -24,16 +28,29 @@
                 <li class="nav-item">
                   <a class="nav-link" href="contact.php">Contact Us</a>
                 </li>
-                <li class="nav-item">
-                 
-                  <?php
-                    session_start();
-                  if(!empty($_SESSION['username']))
-                  {
-                    echo "Hello: ".$_SESSION['username']."<br>"."<a class ='nav-link' href= 'logout.php'>Logout</a>"."</p>";
+                <?php 
+                  if(isset($_SESSION['username'])){
+                      echo 
+                      '<li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Xin chào, ' . htmlspecialchars($_SESSION['username']) . '</a>
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="profile.php">Thông tin tài khoản</a></li>
+                              <li><a class="dropdown-item" href="change_inf.php">Cập nhật thông tin</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="changepass.php">Đổi mật khẩu</a></li>
+                              <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
+                          </ul>
+                      </li>';
+                  } 
+                  else {
+                      echo 
+                      '<li class="nav-item">
+                          <a class="nav-link" href="login.php">Login</a>
+                      </li>';
                   }
-                  else
-                   echo "<a class='nav-link' href='login.php'>Login</a>";
+                
+                
+               
                    $cart_count = isset($_SESSION['cart']) ? array_sum(array_column($_SESSION['cart'], 'quantity')) : 0;
                  ?>
                    <div class="cart-icon">

@@ -14,6 +14,7 @@
   <meta name="author" content="" />
 
   <title>Ninom</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
@@ -71,8 +72,7 @@
                         <option <?php if ($gender == 'Female') echo 'selected'; ?> >Female</option>
                         <option <?php if ($gender == 'Other') echo 'selected'; ?>>Other</option>
                     </select>
-                    HOBBY:
-                    <textarea class="form-control" disabled><?php echo$infor['hobby'];?></textarea>
+                  
             </div>
             <div class="row d-flex justify-content-center mt-5">
             <a href="change_inf.php" type="button" style="width: 100px;" class="btn btn-dark">Chỉnh Sửa</a>
