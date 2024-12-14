@@ -42,10 +42,14 @@
                         foreach($select as $se_pro){
                         ?>
         <div class="box">
+          
           <img src="../upload/<?php echo $se_pro['Picture']?>" style: width="400px"; height="400px" alt="">
           <div class="link_box">
             <h5>
               <?php echo $se_pro['NamePro'] ?>
+            </h5>
+            <h5>
+              <?php  echo $se_pro['PricePro'].'Đ'?>
             </h5>
             <a href="">
               Buy Now
